@@ -1,0 +1,81 @@
+/* src/components/Navbar.css */
+.navbar {
+    background-color: #0e1a3d;
+  }
+
+.navbar-logo-title {
+  display: flex;
+  align-items: center;
+}
+.coffee-button {
+    background-color: #ffffff; /* Button background color */
+    color: rgb(51, 51, 51); /* Button text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 5px 15px; /* Padding for button */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex; /* Flex display for icon and text */
+    align-items: center; /* Center icon and text vertically */
+    transition: background-color 0.3s; /* Transition for background color */
+  }
+  
+  .coffee-button:hover {
+    background-color: #5b70e3; /* Darker blue on hover */
+  }
+  
+  .coffee-button i {
+    margin-right: 5px; /* Space between icon and text */
+  }
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-links li {
+  display: inline; /* Ensure items are inline by default */
+}
+
+.navbar-toggle {
+  display: none; /* Hide the toggle button on larger screens */
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column; /* Stack the links vertically */
+    position: absolute;
+    top: 60px; /* Adjust according to your navbar height */
+    left: 0;
+    width: 100%;
+    background-color: white; /* Match the navbar background */
+    display: none; /* Hidden by default */
+    transition: all 0.3s ease; /* Smooth transition */
+  }
+
+  .navbar-links.active {
+    display: flex; /* Show when active */
+  }
+
+  .navbar-toggle {
+    display: block; /* Show the toggle button */
+  }
+
+  .navbar-links li {
+    margin: 10px 0; /* Add some spacing */
+  }
+}
+.navbar .container-fluid .navbar-brand {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.collapse .navbar-nav .nav-item .nav-link {
+    color: white;
+    font-size: 20px;
+}

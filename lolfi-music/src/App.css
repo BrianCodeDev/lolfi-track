@@ -1,0 +1,291 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(270deg, #0e1a3d, #1a3f63, #0a9e7d, #ffffff); /* Darker gradient */
+  background-size: 400% 400%; /* Increase the size for smooth animation */
+  animation: gradientAnimation 15s ease infinite; /* Apply animation */
+  color: #ffffff; /* White text */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full height */
+}
+
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 50%; /* Start position */
+  }
+  50% {
+      background-position: 100% 50%; /* Midpoint */
+  }
+  100% {
+      background-position: 0% 50%; /* End position */
+  }
+}
+
+
+
+.navbar-logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  margin-right: 8px; /* Adjust spacing between logo and title */
+}
+
+.navbar-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin-left: 20px;
+}
+
+
+.navbar-links li a {
+  color: #ffffff; /* White links */
+  text-decoration: none;
+}
+
+.container {
+  padding: 2rem;
+  flex-grow: 1; /* Allow the container to grow */
+}
+
+.playlist {
+  margin-top: 1rem;
+}
+
+.song-card {
+  display: flex; /* Flex for horizontal alignment */
+  justify-content: space-between; /* Space between info and button */
+  align-items: center; /* Center vertically */
+  background-color: #282828; /* Card background */
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.song-info {
+  flex-grow: 1; /* Allow song info to take up available space */
+}
+
+.play-button {
+  background-color: #6a82fb; /* Different color for play button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.play-button:hover {
+  background-color: #5b70e3; /* Darker blue on hover */
+}
+
+.player {
+  background-color: rgb(23, 23, 23); /* Semi-transparent player background */
+  padding: 1rem;
+  border-radius: 8px;
+  position: fixed; /* Fix the player at the bottom */
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  display: flex; /* Flex container */
+  align-items: center; /* Center vertically */
+  justify-content: space-between; /* Space out controls */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+/* Control button styles */
+.control-button {
+  background: none; /* No background */
+  border: none; /* No border */
+  color: #1d78b9; /* Spotify green */
+  font-size: 16px; /* Adjusted size for smaller buttons */
+  margin: 0 5px; /* Reduced space between buttons */
+  cursor: pointer; /* Pointer cursor */
+  transition: transform 0.2s; /* Animation */
+}
+
+.control-button:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Other existing CSS remains the same */
+
+.player {
+  background-color: rgb(23, 23, 23); /* Semi-transparent player background */
+  padding: 1rem;
+  border-radius: 8px;
+  position: fixed; /* Fix the player at the bottom */
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+  right: 0; /* Align to the right */
+  display: flex; /* Flex container */
+  align-items: center; /* Center vertically */
+  justify-content: space-between; /* Space out controls */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1; /* Allow progress container to grow */
+  margin: 0 10px; /* Margin on the sides */
+}
+
+#current-time, #duration {
+  font-size: 14px;
+}
+
+#progress {
+  -webkit-appearance: none; /* Remove default styling */
+  appearance: none;
+  height: 4px; /* Thinner height */
+  width: 100%; /* Fill the space */
+  background: #444; /* Background for the progress bar */
+  border-radius: 5px;
+  outline: none; /* Remove outline on focus */
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default thumb styling */
+  appearance: none;
+  width: 12px; /* Thinner thumb */
+  height: 12px; /* Thinner thumb */
+  border-radius: 50%;
+  background: #6a82fb; /* Thumb color */
+  cursor: pointer;
+}
+
+#progress::-moz-range-thumb {
+  width: 12px; /* Thinner thumb */
+  height: 12px; /* Thinner thumb */
+  border-radius: 50%;
+  background: #6a82fb; /* Thumb color */
+  cursor: pointer;
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+}
+
+.weather-forecast {
+  display: flex !important;
+  justify-content: center;
+  gap: 130px;
+  padding-top: 80px;
+}
+
+
+.progress-container {
+  display: flex;         
+  align-items: center;   
+  justify-content: space-between;
+  width: 1200px;                
+  padding: 10px 0;         
+}
+
+.progress-slider {
+  flex: 1;                    
+  margin: 0 10px;           
+  cursor: pointer;            
+}
+#current-time, #duration {
+  min-width: 50px;           
+  text-align: center;       
+}
+.control-button {
+  background: none; /* No background */
+  border: none; /* No border */
+  color: #1d78b9; /* Spotify green */
+  font-size: 24px; /* Size of icons */
+  margin: 0 15px; /* Space between buttons */
+  cursor: pointer; /* Pointer cursor */
+  transition: transform 0.2s; /* Animation */
+}
+
+.control-button:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.current-song {
+  flex-grow: 1; /* Allow this to grow to take available space */
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px; /* Font size for song title */
+  color: #fff; /* Color for better visibility */
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out time indicators */
+  width: 100%; /* Full width */
+  margin-top: 10px; /* Space above the progress bar */
+}
+
+.progress-slider {
+  flex-grow: 1; /* Allow the slider to expand */
+  margin: 0 10px; /* Space around the slider */
+  appearance: none; /* Remove default styling */
+  height: 5px; /* Height of the slider */
+  background: #ddd; /* Background color */
+  border-radius: 5px; /* Rounded edges */
+}
+
+.progress-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default appearance */
+  width: 15px; /* Width of the thumb */
+  height: 15px; /* Height of the thumb */
+  background: #1db954; /* Green color for the thumb */
+  border-radius: 50%; /* Round thumb */
+  cursor: pointer; /* Pointer cursor */
+}
+
+.progress-slider::-moz-range-thumb {
+  width: 15px; /* Width of the thumb */
+  height: 15px; /* Height of the thumb */
+  background: #1db954; /* Green color for the thumb */
+  border-radius: 50%; /* Round thumb */
+  cursor: pointer; /* Pointer cursor */
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: row; /* Keep in row */
+    justify-content: center; /* Center the controls */
+  }
+
+  .control-button {
+    font-size: 20px; /* Smaller icon size for mobile */
+  }
+
+  .current-song {
+    font-size: 12px; /* Smaller font on mobile */
+  }
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
