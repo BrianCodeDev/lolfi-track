@@ -3,13 +3,30 @@ import React, { useState } from 'react';
 import favicon from '../assets/favicon.png';
 import iconcoffee from '../assets/icons8-coffee-100 (1).png';
 import avatar from '../assets/th.png';
-import './Navbar.css'; // Adjust the path as necessary
+import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showSearchPopup, setShowSearchPopup] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleSearchClick = () => {
+    setShowSearchPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowSearchPopup(false);
+    setSearchTerm(""); // Reset search term when closing the popup
+    onSearch(""); // Reset filtered list
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+    onSearch(e.target.value); // Pass search term to the parent component
   };
 
   return (
@@ -36,7 +53,7 @@ const Navbar = () => {
               <a className="nav-link active" aria-current="page" href="#home">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#search">Search</a>
+              <a className="nav-link" href="#search" onClick={handleSearchClick}>Search</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#library">Your Library</a>
@@ -84,6 +101,23 @@ const Navbar = () => {
           </form>
         </div>
       </div>
+
+      {/* Search Popup */}
+      {showSearchPopup && (
+        <div className="search-popup-overlay">
+          <div className="search-popup">
+            <button className="close-popup" onClick={handleClosePopup}>X</button>
+            <h2>Search Songs</h2>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Type to search..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+            />
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

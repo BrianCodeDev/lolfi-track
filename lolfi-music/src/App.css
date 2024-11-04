@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Ensure full height */
+  margin-bottom: 500px;
 }
 
 @keyframes gradientAnimation {
@@ -23,6 +24,9 @@ body {
   }
 }
 
+.control-button.active {
+  color: #1db954; /* Spotify green or any other color you prefer */
+}
 
 
 .navbar-logo-title {
@@ -288,4 +292,36 @@ body {
 footer {
   text-align: center;
   margin-top: 20px;
+}
+/* Navbar.css */
+.search-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.search-popup {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }

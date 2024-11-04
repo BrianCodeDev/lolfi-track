@@ -4,7 +4,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer>
-      <p>© 2024 My Music Player</p>
+      <p>© 2024 BrianCodeDev | LOLFI Track</p>
     </footer>
   );
 };
